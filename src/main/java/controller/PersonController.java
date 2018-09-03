@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -47,6 +49,27 @@ public class PersonController {
     public void initialize(){
         nameCol.setCellValueFactory(cell -> cell.getValue().nameProperty());
         lastName.setCellValueFactory(cell -> cell.getValue().lastnameProperty());
+        //dodawanie listenera na jednym itemku w liście
+        personTableView.getSelectionModel().selectedItemProperty().addListener(
+                //można to zrobić lamdą albo klasą anonimową
+                //(observable, oldField, newField) -> viewPersonInfoOnLabel(newField)
+                new ChangeListener<Person>() {
+                    @Override
+                    public void changed(ObservableValue<? extends Person> observable, Person oldValue, Person newValue) {
+                        viewPersonInfoOnLabel(newValue);
+                    }
+                }
+        );
+    }
+    public void viewPersonInfoOnLabel(Person person){
+        nameLabel.setText(person.getName());
+        lastnameLabel.setText(person.getLastname());
+        streetLabel.setText(person.getStreet());
+        cityLabel.setText(person.getCity());
+        postalCodeLabel.setText(person.getPostalCode());
+        telephoneLabel.setText(person.getTelephone());
+
+
     }
 
 

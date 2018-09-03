@@ -36,6 +36,7 @@ public class Main extends Application {
         try {
             vBox = loader.load();
             Scene scene = new Scene(vBox);
+            stage.setTitle("Aplikacja testowa");
             stage.setScene(scene);
             stage.show();
 
