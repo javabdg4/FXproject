@@ -98,4 +98,16 @@ public class Person {
     public void setTelephone(String telephone) {
         this.telephone.set(telephone);
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name=" + name +
+                ", lastname=" + lastname +
+                ", street=" + street +
+                ", city=" + city +
+                ", postalCode=" + postalCode +
+                ", telephone=" + telephone +
+                '}';
+    }
 }

@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" fx:controller="controller.PersonController" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="controller.PersonController" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -110,14 +110,10 @@
                               <Label fx:id="telephoneLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            </children>
                         </GridPane>
-                        <Button layoutX="349.0" layoutY="286.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="Delete" />
-                        <Button layoutX="260.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Edit" />
-                        <Button layoutX="172.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Save" />
-                        <Button layoutX="80.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="New">
-                           <effect>
-                              <ColorAdjust />
-                           </effect>
-                        </Button>
+                        <Button onAction="#handleDeleteButton" layoutX="349.0" layoutY="286.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="80.0" text="Delete" />
+                        <Button onAction="#handleEditButton" layoutX="260.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Edit" />
+                        <Button onAction="#handleSaveButton" layoutX="172.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="Save" />
+                        <Button onAction="#handleNewButton" layoutX="80.0" layoutY="286.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="New" />
                      </children>
                   </AnchorPane>
               </items>
